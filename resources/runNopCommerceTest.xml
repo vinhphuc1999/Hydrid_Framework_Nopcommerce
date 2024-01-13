@@ -3,27 +3,13 @@
 <suite parallel="false" name="NopCommerce">
 	<test name="Run on Firefox">
 		<classes>
-			<class name="com.nopcommerce.user.User_1_RegisterLogin">
+			<class name="com.nopcommerce.user.User_2_LogIn">
 				<!--<methods>
-					<include name="Testcase_5_Register_Password_Less_Than_6_Chars" />
+					<include name="Testcase_1_LogIn_Emty_Data" />
 				</methods>-->
 			</class>
 		</classes>
 	</test> <!--
 	Test -->
 </suite> <!--
-Suite -->
-
-<!--<suite parallel="false" name="NopCommerce">
-	<test name="Run on Firefox">
-		<classes>
-			<class name="com.nopcommerce.user.User_1_RegisterLogin">
-				<methods>
-					<include name="Testcase_4_Register_Exiting_Email" />
-				</methods>
-			</class>
-		</classes>
-	</test> 
-	Test 
-</suite> 
 Suite -->

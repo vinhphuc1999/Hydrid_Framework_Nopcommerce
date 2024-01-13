@@ -1,5 +1,6 @@
 package com.nopcommerce.user;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -14,6 +15,8 @@ import org.testng.annotations.Test;
 public class User_1_RegisterLogin {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
+	Random generator = new Random();
+	String email = "phucpv" + generator.nextInt(9999) + "@gmail.com";
 
 	@BeforeClass
 	public void beforeClass() {
@@ -66,6 +69,7 @@ public class User_1_RegisterLogin {
 
 	@Test
 	public void Testcase_3_Register_Succes() {
+//		driver.findElement(By.cssSelector("a.ico-register")).click();
 		driver.findElement(By.cssSelector("input#gender-male")).click();
 		driver.findElement(By.cssSelector("input#FirstName")).clear();
 		driver.findElement(By.cssSelector("input#LastName")).clear();
@@ -81,7 +85,7 @@ public class User_1_RegisterLogin {
 		driver.findElement(By.cssSelector("input#Company")).clear();
 		driver.findElement(By.cssSelector("input#Password")).clear();
 		driver.findElement(By.cssSelector("input#ConfirmPassword")).clear();
-		driver.findElement(By.cssSelector("input#Email")).sendKeys("phucpv5@gmail.com");
+		driver.findElement(By.cssSelector("input#Email")).sendKeys(email);
 		driver.findElement(By.cssSelector("input#Company")).sendKeys("Nam Long Software");
 		driver.findElement(By.cssSelector("input#Password")).sendKeys("Pvpgtvt2017!");
 		driver.findElement(By.cssSelector("input#ConfirmPassword")).sendKeys("Pvpgtvt2017!");
