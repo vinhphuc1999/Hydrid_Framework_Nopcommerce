@@ -15,7 +15,6 @@ public class User_2_LogIn {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 	Random generator = new Random();
-	String email = "phucpv" + generator.nextInt(9999) + "@gmail.com";
 
 	@BeforeClass
 	public void beforeClass() {
@@ -78,7 +77,6 @@ public class User_2_LogIn {
 		driver.findElement(By.cssSelector("input#Password")).sendKeys("797979");
 		driver.findElement(By.xpath("//button[text()='Log in']")).click();
 		Assert.assertEquals(driver.getTitle(), "nopCommerce demo store");
-
 	}
 
 	@AfterClass

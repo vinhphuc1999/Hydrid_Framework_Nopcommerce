@@ -14,14 +14,15 @@ import org.testng.annotations.Test;
 
 public class User_1_RegisterLogin {
 	WebDriver driver;
+	String emailAddress;
 	String projectPath = System.getProperty("user.dir");
 	Random generator = new Random();
-	String email = "phucpv" + generator.nextInt(9999) + "@gmail.com";
 
 	@BeforeClass
 	public void beforeClass() {
 		System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
 		driver = new ChromeDriver();
+		emailAddress = "afc" + generateFakeNumber() + "@gmail.com";
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://demo.nopcommerce.com/");
@@ -85,7 +86,7 @@ public class User_1_RegisterLogin {
 		driver.findElement(By.cssSelector("input#Company")).clear();
 		driver.findElement(By.cssSelector("input#Password")).clear();
 		driver.findElement(By.cssSelector("input#ConfirmPassword")).clear();
-		driver.findElement(By.cssSelector("input#Email")).sendKeys(email);
+		driver.findElement(By.cssSelector("input#Email")).sendKeys(emailAddress);
 		driver.findElement(By.cssSelector("input#Company")).sendKeys("Nam Long Software");
 		driver.findElement(By.cssSelector("input#Password")).sendKeys("Pvpgtvt2017!");
 		driver.findElement(By.cssSelector("input#ConfirmPassword")).sendKeys("Pvpgtvt2017!");
@@ -167,6 +168,11 @@ public class User_1_RegisterLogin {
 		driver.findElement(By.cssSelector("button#register-button")).click();
 		Assert.assertEquals(driver.findElement(By.cssSelector("span#ConfirmPassword-error")).getText(),
 				"The password and confirmation password do not match.");
+	}
+	
+	public int generateFakeNumber() {
+		Random rand = new Random();
+		return rand.nextInt(9999);
 	}
 
 	@AfterClass
