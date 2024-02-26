@@ -3,9 +3,9 @@
 <suite parallel="false" name="NopCommerce">
 	<test name="Run on Firefox">
 		<classes>
-			<class name="com.nopcommerce.user.User_2_LogIn">
+			<class name="com.nopcommerce.user.Level_2_Apply_BasePage_III">
 				<!--<methods>
-					<include name="Testcase_1_LogIn_Emty_Data" />
+					<include name="Testcase_2_Register_Invalid_Email" />
 				</methods>-->
 			</class>
 		</classes>
