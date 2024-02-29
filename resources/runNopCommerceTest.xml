@@ -3,7 +3,7 @@
 <suite parallel="false" name="NopCommerce">
 	<test name="Run on Firefox">
 		<classes>
-			<class name="com.nopcommerce.user.Level_2_Apply_BasePage_III">
+			<class name="com.nopcommerce.user.Level_3_Page_Object">
 				<!--<methods>
 					<include name="Testcase_2_Register_Invalid_Email" />
 				</methods>-->
