@@ -305,17 +305,17 @@ public class BasePage {
 
 	protected void waitForElementVisible(WebDriver driver, String xpathLocator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
-		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("xpathLocator")));
+		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator)));
 	}
 
 	protected void waitForAllElementVisible(WebDriver driver, String xpathLocator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
-		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("xpathLocator")));
+		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(xpathLocator)));
 	}
 
 	protected void waitForElementInVisible(WebDriver driver, String xpathLocator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
-		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("xpathLocator")));
+		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpathLocator)));
 	}
 
 	protected void waitForAllElementInVisible(WebDriver driver, String xpathLocator) {

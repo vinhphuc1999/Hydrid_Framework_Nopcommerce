@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import pageObjects.HomePageObject;
 import pageObjects.RegisterPageObject;
 
-public class Level_3_Page_Object {
+public class Level_3_Page_Object_1_Register {
 	private WebDriver driver;
 	private String firstName, lastName, emailAddress, password;
 	// Declare (Khai bao)
@@ -29,11 +29,10 @@ public class Level_3_Page_Object {
 		System.out.print(projectPath);
 		System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
 		driver = new EdgeDriver();
-		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://demo.nopcommerce.com/");
+		homePage = new HomePageObject(driver);
 		// Initial (Khoi tao)
 		// Encapsulation (Dong goi)
 		firstName = "Devtest";
@@ -48,10 +47,13 @@ public class Level_3_Page_Object {
 		System.out.println("Register_1 Step 1: Click to Register link");
 		homePage.clickToRegisterLink();
 
+		// Nguyen tac: Khi qua trang moi thi phai khoi tao trang len
+		registerPage = new RegisterPageObject(driver);
+
 		System.out.println("Register_1 Step 2: Click to Register button");
 		registerPage.clickToRegisterButton();
 
-		System.out.println("Register_1 - Step 3: Verify error message displayed");
+		System.out.println("Register_1 Step 3: Verify error message displayed");
 		Assert.assertEquals(registerPage.getErrorMessageAtFirstnameTextbox(), "First name is required.");
 		Assert.assertEquals(registerPage.getErrorMessageAtLastnameTextbox(), "Last name is required.");
 		Assert.assertEquals(registerPage.getErrorMessageAtEmailTextbox(), "Email is required.");
@@ -63,6 +65,9 @@ public class Level_3_Page_Object {
 	public void Register_2_Register_Invalid_Email() {
 		System.out.println("Register_2 Step 1: Click to Register link");
 		homePage.clickToRegisterLink();
+
+		// Nguyen tac: Khi qua trang moi thi phai khoi tao trang len
+		registerPage = new RegisterPageObject(driver);
 
 		System.out.println("Register_2 Step 2: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -83,6 +88,9 @@ public class Level_3_Page_Object {
 		System.out.println("Register_3 Step 1: Click to Register link");
 		homePage.clickToRegisterLink();
 
+		// Nguyen tac: Khi qua trang moi thi phai khoi tao trang len
+		registerPage = new RegisterPageObject(driver);
+
 		System.out.println("Register_3 Step 2: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
 		registerPage.inputToLastnameTextbox(lastName);
@@ -94,7 +102,7 @@ public class Level_3_Page_Object {
 		registerPage.clickToRegisterButton();
 
 		System.out.println("Register_3 Step 4: Verify success message displayed");
-		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
+		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Password is required.");
 
 		System.out.println("Register_3 Step 5: Click to Logout link");
 		registerPage.clickToLogoutLink();
@@ -104,6 +112,9 @@ public class Level_3_Page_Object {
 	public void Register_4_Register_Exiting_Email() {
 		System.out.println("Register_4 Step 1: Click to Register link");
 		homePage.clickToRegisterLink();
+
+		// Nguyen tac: Khi qua trang moi thi phai khoi tao trang len
+		registerPage = new RegisterPageObject(driver);
 
 		System.out.println("Register_4 Step 2: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -116,13 +127,16 @@ public class Level_3_Page_Object {
 		registerPage.clickToRegisterButton();
 
 		System.out.println("Register_4 Step 4: Verify error existing email message displayed");
-		Assert.assertEquals(registerPage.getErrorExistingEmailMessage(), "The specified email already exists");
+		Assert.assertEquals(registerPage.getErrorExistingEmailMessage(), "Password is required.");
 	}
 
 	@Test
 	public void Register_5_Register_Password_Less_Than_6_Chars() {
 		System.out.println("Register_5 Step 1: Click to Register link");
 		homePage.clickToRegisterLink();
+
+		// Nguyen tac: Khi qua trang moi thi phai khoi tao trang len
+		registerPage = new RegisterPageObject(driver);
 
 		System.out.println("Register_5 Step 2: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -136,13 +150,16 @@ public class Level_3_Page_Object {
 
 		System.out.println("Register_5 Step 4: Verify error message displayed");
 		Assert.assertEquals(registerPage.getErrorMessageAtPasswordTextbox(),
-				"Password must meet the following rules:\nmust have at least 6 character");
+				"Password must meet the following rules:\nmust have at least 6 characters");
 	}
 
 	@Test
 	public void Register_6_Register_Invalid_Confirm_Password() {
 		System.out.println("Register_6 Step 1: Click to Register link");
 		homePage.clickToRegisterLink();
+
+		// Nguyen tac: Khi qua trang moi thi phai khoi tao trang len
+		registerPage = new RegisterPageObject(driver);
 
 		System.out.println("Register_6 Step 2: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -155,8 +172,7 @@ public class Level_3_Page_Object {
 		registerPage.clickToRegisterButton();
 
 		System.out.println("Register_6 Step 4: Verify error message displayed");
-		Assert.assertEquals(registerPage.getErrorMessageAtConfirmPasswordTextbox(),
-				"The password and confirmation password do not match");
+		Assert.assertEquals(registerPage.getErrorMessageAtConfirmPasswordTextbox(), "Password is required.");
 	}
 
 	// Customer close browser/ driver

@@ -13,16 +13,25 @@ public class HomePageObject extends BasePage {
 	public HomePageObject(WebDriver driver) {
 		this.driver = driver;
 	}
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
 
 	public void clickToRegisterLink() {
-		System.out.println(HomePageUI.EMAIL_TEXTBOX);
-		waitForElementClickable(driver, HomePageUI.EMAIL_TEXTBOX);
-		clickToElement(driver, HomePageUI.EMAIL_TEXTBOX);
+		waitForElementClickable(driver, HomePageUI.REGISTER_LINK);
+		clickToElement(driver, HomePageUI.REGISTER_LINK);
+	}
+
+	public void clickToLoginLink() {
+		waitForElementClickable(driver, HomePageUI.LOGIN_LINK);
+		clickToElement(driver, HomePageUI.LOGIN_LINK);
+	}
+
+	public boolean isMyAccountLinkDisplayed() {
+		waitForElementVisible(driver, HomePageUI.MY_ACCOUNT_LINK);
+		return isElementDisplayed(driver, HomePageUI.MY_ACCOUNT_LINK);
 	}
 
 }
