@@ -35,8 +35,8 @@ public class LoginPageObject extends BasePage {
 	}
 
 	public String getErrorMessageUnsuccessfull() {
-		waitForElementVisible(driver, LoginPageUI.UNSUCCESSFYL_ERROR_MESSAGE);
-		return getElementText(driver, LoginPageUI.UNSUCCESSFYL_ERROR_MESSAGE);
+		waitForElementVisible(driver, LoginPageUI.UNSUCCESSFUL_ERROR_MESSAGE);
+		return getElementText(driver, LoginPageUI.UNSUCCESSFUL_ERROR_MESSAGE);
 	}
 
 	public void inputToPassTextbox(String password) {
