@@ -2,9 +2,9 @@
 <!DOCTYPE project>
 <suite parallel="false" name="NopCommerce">
 	<test name="Run on Firefox">
-		<parameter name="browser" value="firefox" />
+		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.nopcommerce.user.Level_6_Page_Generator_Manager_III">
+			<class name="com.nopcommerce.user.Level_7_Switch_Page">
 				<!--<methods>
 					<include name="Testcase_2_Register_Invalid_Email" />
 				</methods>-->

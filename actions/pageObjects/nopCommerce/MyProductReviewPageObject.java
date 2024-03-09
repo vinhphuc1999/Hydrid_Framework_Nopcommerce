@@ -2,11 +2,13 @@ package pageObjects.nopCommerce;
 
 import org.openqa.selenium.WebDriver;
 
-public class MyAccountPageObject {
+import commons.BasePage;
+
+public class MyProductReviewPageObject extends BasePage {
 
 	WebDriver driver;
 
-	public MyAccountPageObject(WebDriver driver) {
+	public MyProductReviewPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
@@ -15,9 +17,9 @@ public class MyAccountPageObject {
 
 	}
 
-	public void clickToNewLetterCheckbox() {
+	public RewardPointPageObject openRewardPoint() {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 
 }

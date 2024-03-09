@@ -69,8 +69,8 @@ public class RegisterPageObject extends BasePage {
 	}
 
 	public void inputToConfirmPasswordTextbox(String confirmPassword) {
-		waitForElementClickable(driver, RegisterPageUI.PASSWORD_TEXTBOX);
-		sendkeyToElement(driver, RegisterPageUI.PASSWORD_TEXTBOX, confirmPassword);
+		waitForElementClickable(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX);
+		sendkeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX, confirmPassword);
 	}
 
 	public HomePageObject clickToLogoutLink() {
