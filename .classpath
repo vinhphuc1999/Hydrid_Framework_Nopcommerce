@@ -14,7 +14,6 @@
 	<classpathentry kind="lib" path="libWebDriverManager/docker-java-transport-3.3.5.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/docker-java-transport-httpclient5-3.3.5.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/gson-2.10.1.jar"/>
-	<classpathentry kind="lib" path="libWebDriverManager/guava-19.0.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/httpclient5-5.2.1.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/httpcore5-5.2.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/httpcore5-h2-5.2.jar"/>

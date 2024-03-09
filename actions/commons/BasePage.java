@@ -52,6 +52,7 @@ public class BasePage {
 	protected Alert waitForAlertPresence(WebDriver driver) {
 		WebDriverWait expicitWait = new WebDriverWait(driver, longTimeout);
 		return expicitWait.until(ExpectedConditions.alertIsPresent());
+				
 	}
 
 	protected void acceptAlert(WebDriver driver) {
