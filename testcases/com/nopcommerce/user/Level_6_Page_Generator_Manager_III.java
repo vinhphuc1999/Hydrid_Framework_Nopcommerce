@@ -12,19 +12,11 @@ import org.testng.annotations.Test;
 import commons.BaseTest;
 import pageObjects.nopCommerce.HomePageObject;
 import pageObjects.nopCommerce.LoginPageObject;
+import pageObjects.nopCommerce.MyAccountPageObject;
+import pageObjects.nopCommerce.PageGeneratorManager;
 import pageObjects.nopCommerce.RegisterPageObject;
 
-public class Level_4_Multiple_Browser extends BaseTest {
-	private WebDriver driver;
-	private String firstName, lastName, invalidEmail, notFoundEmail, existingEmail, validPassword, invalidPassword;
-	// Declare (Khai bao)
-	// BasePage: class
-	// basePage: object
-	private String projectPath = System.getProperty("user.dir");
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
-
+public class Level_6_Page_Generator_Manager_III extends BaseTest {
 	// Multiple browser
 	@Parameters("browser")
 	@BeforeClass
@@ -35,7 +27,7 @@ public class Level_4_Multiple_Browser extends BaseTest {
 
 		System.out.print(projectPath);
 
-		homePage = new HomePageObject(driver);
+		homePage = PageGeneratorManager.getHomePage(driver);
 		// Initial (Khoi tao)
 		// Encapsulation (Dong goi)
 		firstName = "Devtest";
@@ -46,9 +38,7 @@ public class Level_4_Multiple_Browser extends BaseTest {
 		validPassword = "Pvpgtvt2017!";
 		invalidPassword = "79797979";
 		System.out.println("Pre-Condition Step 1: Click to Register link");
-		homePage.clickToRegisterLink();
-
-		registerPage = new RegisterPageObject(driver);
+		registerPage = homePage.clickToRegisterLink();
 
 		System.out.println("Pre-Condition Step 2: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -64,29 +54,20 @@ public class Level_4_Multiple_Browser extends BaseTest {
 		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Password is required.");
 
 		System.out.println("Pre-Condition Step 5: Click to Logout link");
-		registerPage.clickToLogoutLink();
-
-		homePage = new HomePageObject(driver);
+		homePage = registerPage.clickToLogoutLink();
 	}
 
 	@Test
 	public void Login_1_Login_Emty_Data() {
-		homePage.clickToLoginLink();
-
-		// Tu trang Home sang trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = homePage.clickToLoginLink();
 		loginPage.clickToLoginButton();
-
 		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextbox(), "Please enter your email");
 
 	}
 
 	@Test
 	public void Login_2_Login_Invalid_Email() {
-		homePage.clickToLoginLink();
-
-		// Tu trang Home sang trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = homePage.clickToLoginLink();
 
 		loginPage.inputToEmailTextbox(invalidEmail);
 
@@ -97,10 +78,7 @@ public class Level_4_Multiple_Browser extends BaseTest {
 
 	@Test
 	public void Login_3_Login_Email_Not_Found() {
-		homePage.clickToLoginLink();
-
-		// Tu trang Home sang trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = homePage.clickToLoginLink();
 
 		loginPage.inputToEmailTextbox(notFoundEmail);
 
@@ -112,10 +90,7 @@ public class Level_4_Multiple_Browser extends BaseTest {
 
 	@Test
 	public void Login_4_Existing_Email_Empty_Password() {
-		homePage.clickToLoginLink();
-
-		// Tu trang Home sang trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = homePage.clickToLoginLink();
 
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPassTextbox("");
@@ -128,10 +103,7 @@ public class Level_4_Multiple_Browser extends BaseTest {
 
 	@Test
 	public void Login_5_Existing_Email_Incorrect_Password() {
-		homePage.clickToLoginLink();
-
-		// Tu trang Home sang trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = homePage.clickToLoginLink();
 
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPassTextbox(invalidPassword);
@@ -144,19 +116,18 @@ public class Level_4_Multiple_Browser extends BaseTest {
 
 	@Test
 	public void Login_6_Emty_Data() {
-		homePage.clickToLoginLink();
-
-		// Tu trang Home sang trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = homePage.clickToLoginLink();
 
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPassTextbox(validPassword);
 
-		loginPage.clickToLoginButton();
+		homePage = loginPage.clickToLoginButton();
 
-		// Login thanh cong quay ve trang Home
-		homePage = new HomePageObject(driver);
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
+		
+		myAccountPage = homePage.clickToMyAccountLink();
+		
+		myAccountPage.clickToNewLetterCheckbox();
 
 	}
 
@@ -171,4 +142,14 @@ public class Level_4_Multiple_Browser extends BaseTest {
 		return rand.nextInt(9999);
 	}
 
+	private WebDriver driver;
+	private String firstName, lastName, invalidEmail, notFoundEmail, existingEmail, validPassword, invalidPassword;
+	// Declare (Khai bao)
+	// BasePage: class
+	// basePage: object
+	private String projectPath = System.getProperty("user.dir");
+	private HomePageObject homePage;
+	private RegisterPageObject registerPage;
+	private LoginPageObject loginPage;
+	private MyAccountPageObject myAccountPage;
 }
