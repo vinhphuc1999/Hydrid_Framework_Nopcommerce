@@ -1,6 +1,4 @@
-package pageObject.gorillaDesk;
-
-import org.openqa.selenium.WebDriver;
+package pageObject.gorillaDesk.admin;
 
 public class PageGeneratorManager {
 

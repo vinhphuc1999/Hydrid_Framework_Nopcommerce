@@ -1,22 +1,18 @@
-package pageObjects.nopCommerce;
+package pageObjects.nopCommerce.user;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.nopCommerce.BasePageUI;
-import pageUIs.nopCommerce.CustomerInforPageUI;
+import commons.PageGeneratorManager;
+import pageUIs.nopCommerce.user.BasePageUI;
+import pageUIs.nopCommerce.user.CustomerInforPageUI;
 
-public class CustomerInforPageObject extends BasePage {
+public class UserCustomerInforPageObject extends BasePage {
 
 	WebDriver driver;
 
-	public CustomerInforPageObject(WebDriver driver) {
+	public UserCustomerInforPageObject(WebDriver driver) {
 		this.driver = driver;
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public boolean isCustomerInforPageDisplayed() {
@@ -24,10 +20,10 @@ public class CustomerInforPageObject extends BasePage {
 		return isElementDisplayed(driver, CustomerInforPageUI.CUSTOMER_INFOR_HEADER);
 	}
 
-	public AddressPageObject openAddressPage() {
+	public UserAddressPageObject openAddressPage() {
 		waitForElementClickable(driver, BasePageUI.ADDRESS_LINK);
 		clickToElement(driver, BasePageUI.ADDRESS_LINK);
-		return PageGeneratorManager.getAddressPage(driver);
+		return PageGeneratorManager.getUserAddressPage(driver);
 	}
 
 }

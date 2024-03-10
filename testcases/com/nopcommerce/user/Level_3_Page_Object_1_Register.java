@@ -10,8 +10,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import pageObjects.nopCommerce.HomePageObject;
-import pageObjects.nopCommerce.RegisterPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 public class Level_3_Page_Object_1_Register {
 	private WebDriver driver;
@@ -20,8 +20,8 @@ public class Level_3_Page_Object_1_Register {
 	// BasePage: class
 	// basePage: object
 	private String projectPath = System.getProperty("user.dir");
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
 
 	// Multiple browser
 	@BeforeClass
@@ -32,7 +32,7 @@ public class Level_3_Page_Object_1_Register {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://demo.nopcommerce.com/");
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		// Initial (Khoi tao)
 		// Encapsulation (Dong goi)
 		firstName = "Devtest";
@@ -48,7 +48,7 @@ public class Level_3_Page_Object_1_Register {
 		homePage.clickToRegisterLink();
 
 		// Nguyen tac: Khi qua trang moi thi phai khoi tao trang len
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		System.out.println("Register_1 Step 2: Click to Register button");
 		registerPage.clickToRegisterButton();
@@ -67,7 +67,7 @@ public class Level_3_Page_Object_1_Register {
 		homePage.clickToRegisterLink();
 
 		// Nguyen tac: Khi qua trang moi thi phai khoi tao trang len
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		System.out.println("Register_2 Step 2: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -89,7 +89,7 @@ public class Level_3_Page_Object_1_Register {
 		homePage.clickToRegisterLink();
 
 		// Nguyen tac: Khi qua trang moi thi phai khoi tao trang len
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		System.out.println("Register_3 Step 2: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -114,7 +114,7 @@ public class Level_3_Page_Object_1_Register {
 		homePage.clickToRegisterLink();
 
 		// Nguyen tac: Khi qua trang moi thi phai khoi tao trang len
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		System.out.println("Register_4 Step 2: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -136,7 +136,7 @@ public class Level_3_Page_Object_1_Register {
 		homePage.clickToRegisterLink();
 
 		// Nguyen tac: Khi qua trang moi thi phai khoi tao trang len
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		System.out.println("Register_5 Step 2: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -159,7 +159,7 @@ public class Level_3_Page_Object_1_Register {
 		homePage.clickToRegisterLink();
 
 		// Nguyen tac: Khi qua trang moi thi phai khoi tao trang len
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		System.out.println("Register_6 Step 2: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);

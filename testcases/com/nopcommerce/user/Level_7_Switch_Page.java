@@ -10,14 +10,14 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.nopCommerce.AddressPageObject;
-import pageObjects.nopCommerce.CustomerInforPageObject;
-import pageObjects.nopCommerce.HomePageObject;
-import pageObjects.nopCommerce.LoginPageObject;
-import pageObjects.nopCommerce.MyProductReviewPageObject;
-import pageObjects.nopCommerce.PageGeneratorManager;
-import pageObjects.nopCommerce.RegisterPageObject;
-import pageObjects.nopCommerce.RewardPointPageObject;
+import commons.PageGeneratorManager;
+import pageObjects.nopCommerce.user.UserAddressPageObject;
+import pageObjects.nopCommerce.user.UserCustomerInforPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserLoginPageObject;
+import pageObjects.nopCommerce.user.UserMyProductReviewPageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
+import pageObjects.nopCommerce.user.UserRewardPointPageObject;
 
 public class Level_7_Switch_Page extends BaseTest {
 	// Multiple browser
@@ -27,7 +27,7 @@ public class Level_7_Switch_Page extends BaseTest {
 		// Goi den khoi tao driver tuong ung voi browser name
 		driver = getBrowserDriver(browserName);
 		System.out.print(projectPath);
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		// Initial (Khoi tao)
 		// Encapsulation (Dong goi)
 		firstName = "Devtest";
@@ -103,11 +103,11 @@ public class Level_7_Switch_Page extends BaseTest {
 	// BasePage: class
 	// basePage: object
 	private String projectPath = System.getProperty("user.dir");
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
-	private CustomerInforPageObject customerInforPage;
-	private MyProductReviewPageObject myProductReviewPage;
-	private RewardPointPageObject rewardPointPage;
-	private AddressPageObject addressPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
+	private UserCustomerInforPageObject customerInforPage;
+	private UserMyProductReviewPageObject myProductReviewPage;
+	private UserRewardPointPageObject rewardPointPage;
+	private UserAddressPageObject addressPage;
 }

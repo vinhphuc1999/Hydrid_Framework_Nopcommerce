@@ -10,10 +10,10 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.nopCommerce.HomePageObject;
-import pageObjects.nopCommerce.LoginPageObject;
-import pageObjects.nopCommerce.PageGeneratorManager;
-import pageObjects.nopCommerce.RegisterPageObject;
+import commons.PageGeneratorManager;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserLoginPageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 public class Level_6_Page_Generator_Manager_III extends BaseTest {
 	// Multiple browser
@@ -26,7 +26,7 @@ public class Level_6_Page_Generator_Manager_III extends BaseTest {
 
 		System.out.print(projectPath);
 
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		// Initial (Khoi tao)
 		// Encapsulation (Dong goi)
 		firstName = "Devtest";
@@ -142,7 +142,7 @@ public class Level_6_Page_Generator_Manager_III extends BaseTest {
 	// BasePage: class
 	// basePage: object
 	private String projectPath = System.getProperty("user.dir");
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
 }

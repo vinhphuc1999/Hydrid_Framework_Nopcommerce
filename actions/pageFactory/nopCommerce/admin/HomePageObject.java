@@ -1,4 +1,4 @@
-package pageFactory.nopCommerce;
+package pageFactory.nopCommerce.admin;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

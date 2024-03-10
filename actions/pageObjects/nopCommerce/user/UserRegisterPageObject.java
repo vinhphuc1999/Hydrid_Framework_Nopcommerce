@@ -1,21 +1,16 @@
-package pageObjects.nopCommerce;
+package pageObjects.nopCommerce.user;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.nopCommerce.RegisterPageUI;
+import pageUIs.nopCommerce.user.RegisterPageUI;
 
-public class RegisterPageObject extends BasePage {
+public class UserRegisterPageObject extends BasePage {
 
 	private WebDriver driver;
 
-	public RegisterPageObject(WebDriver driver) {
+	public UserRegisterPageObject(WebDriver driver) {
 		this.driver = driver;
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public void clickToRegisterButton() {
@@ -73,9 +68,9 @@ public class RegisterPageObject extends BasePage {
 		sendkeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX, confirmPassword);
 	}
 
-	public HomePageObject clickToLogoutLink() {
+	public UserHomePageObject clickToLogoutLink() {
 		waitForElementClickable(driver, RegisterPageUI.LOGOUT_LINK);
-		return new HomePageObject(driver);
+		return new UserHomePageObject(driver);
 	}
 
 	public String getErrorExistingEmailMessage() {

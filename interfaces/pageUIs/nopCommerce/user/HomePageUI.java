@@ -1,4 +1,4 @@
-package pageUIs.nopCommerce;
+package pageUIs.nopCommerce.user;
 
 public class HomePageUI {
 	// Day la mot bien hang so (static final) - (Convention: VIET HOA)

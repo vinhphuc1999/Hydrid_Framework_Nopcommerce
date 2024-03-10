@@ -1,6 +1,6 @@
-package pageUIs.nopCommerce;
+package pageUIs.nopCommerce.user;
 
-public class MyProductReviewPageUI {
+public class RegisterPageUI {
 
 	public static final String FIRST_NAME_TEXTBOX = "//input[@id='FirstName']";
 	public static final String LAST_NAME_TEXTBOX = "//input[@id='LastName']";

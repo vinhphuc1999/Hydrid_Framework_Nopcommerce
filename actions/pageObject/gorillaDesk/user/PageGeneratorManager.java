@@ -1,4 +1,4 @@
-package pageObjects.liveGuru;
+package pageObject.gorillaDesk.user;
 
 public class PageGeneratorManager {
 
@@ -6,5 +6,6 @@ public class PageGeneratorManager {
 		// TODO Auto-generated method stub
 
 	}
+	
 
 }
