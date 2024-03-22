@@ -2,6 +2,8 @@ package commons;
 
 import org.openqa.selenium.WebDriver;
 
+import pageObject.gorillaDesk.user.UserCalendarPageObject;
+import pageObject.gorillaDesk.user.UserLogInPageObject;
 import pageObjects.nopCommerce.admin.AdminDashboardPageObject;
 import pageObjects.nopCommerce.admin.AdminLoginPageObject;
 import pageObjects.nopCommerce.user.UserAddressPageObject;
@@ -17,6 +19,14 @@ public class PageGeneratorManager {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	public static UserCalendarPageObject getUserCalenderPage (WebDriver driver) {
+		return new UserCalendarPageObject(driver);
+	}
+	
+	public static UserLogInPageObject getUserLogInPage (WebDriver driver) {
+		return new UserLogInPageObject(driver);
 	}
 	
 	public static UserHomePageObject getUserHomePage (WebDriver driver) {

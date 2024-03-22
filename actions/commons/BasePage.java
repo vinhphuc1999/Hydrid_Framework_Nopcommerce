@@ -128,6 +128,11 @@ public class BasePage {
 		element.clear();
 		element.sendKeys(textValue);
 	}
+	
+	protected void clearToElemet(WebDriver driver, String locatorType) {
+		WebElement element = getWebElement(driver, locatorType);
+		element.clear();
+	}
 
 	protected String getElementText(WebDriver driver, String locatorType, String textValue) {
 		return getWebElement(driver, locatorType).getText();

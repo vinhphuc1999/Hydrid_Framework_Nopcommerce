@@ -1,37 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project>
-<suite parallel="false" name="NopCommerce">
-	<test name="Run on Firefox">
-		<parameter name="browser" value="firefox" />
+<suite parallel="false" name="GorillDesk">
+	<parameter name="enviroment" value="DEV" />
+	<test name="Run on Chrome GorillaDesk Project Feature Log In">
+		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.nopcommerce.user.Level_6_Page_Generator_Manager_III">
+			<class name="com.gorilladesk.login.Login">
 				<!--<methods>
-					<include name="Testcase_2_Register_Invalid_Email" />
+					<include name="TC_6_Login_Success" />
 				</methods>-->
 			</class>
 		</classes>
 	</test>
-	<!--<test name="Run on Chrome">
-		<parameter name="browser" value="chrome" />
+	<test name="Run on Firefox GorillaDesk Project Feature Log In">
+		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="com.nopcommerce.user.Level_4_Multiple_Browser">
-				<methods>
-					<include name="Testcase_2_Register_Invalid_Email" />
-				</methods>
+			<class name="com.gorilladesk.login.Login">
+				<!--<methods>
+					<include name="TC_6_Login_Success" />
+				</methods>-->
 			</class>
 		</classes>
 	</test>
-	<test name="Run on Edge">
+	<test name="Run on Edge GorillaDesk Project Feature Log In">
 		<parameter name="browser" value="edge" />
 		<classes>
-			<class name="com.nopcommerce.user.Level_4_Multiple_Browser">
-				<methods>
-					<include name="Testcase_2_Register_Invalid_Email" />
-				</methods>
+			<class name="com.gorilladesk.login.Login">
+				<!--<methods>
+					<include name="TC_6_Login_Success" />
+				</methods>-->
 			</class>
 		</classes>
-	</test>-->
-	<!--
-	Test -->
-</suite> <!--
-Suite -->
+	</test>
+</suite>
