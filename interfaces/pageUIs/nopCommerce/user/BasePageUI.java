@@ -7,4 +7,5 @@ public class BasePageUI {
 	public static final String REWARD_POINT_LINK = "xpath=//div[contains(@class,'account-navigation')]//a[text()='Reward points']";
 	public static final String LOGOUT_LINK_AT_USER = "xpath=//a[@class='ico-logout']";
 	public static final String LOGOUT_LINK_AT_ADMIN = "xpath=//div[@id='navbarText']//a[text()='Logout']";
+	public static final String DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA = "xpath=//div[contains(@class,'account-navigation')]//a[text()='%s']";
 }
