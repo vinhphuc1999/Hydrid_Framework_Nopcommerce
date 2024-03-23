@@ -2,7 +2,7 @@ package commons;
 
 public class GlobalConstants {
 	// DEV
-	public static final String PORTAL_DEV_URL = "https://r2.gdesk.io/auth/login";
+	public static final String PORTAL_DEV_URL = "https://demo.nopcommerce.com/";
 	public static final String ADMIN_DEV_URL = "https://admin-demo.nopcommerce.com/login?ReturnUrl=/admin/";
 
 //	STAGING

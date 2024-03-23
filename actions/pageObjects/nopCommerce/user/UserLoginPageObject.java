@@ -26,7 +26,7 @@ public class UserLoginPageObject extends BasePage {
 	}
 
 	public void inputToEmailTextbox(String emailAddress) {
-		waitForAllElementVisible(driver, LoginPageUI.EMAIL_TEXTBOX);
+		waitForElementClickable(driver, LoginPageUI.EMAIL_TEXTBOX);
 		sendkeyToElement(driver, LoginPageUI.EMAIL_TEXTBOX, emailAddress);
 
 	}
@@ -37,7 +37,7 @@ public class UserLoginPageObject extends BasePage {
 	}
 
 	public void inputToPassTextbox(String password) {
-		waitForAllElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
+		waitForElementClickable(driver, LoginPageUI.PASSWORD_TEXTBOX);
 		sendkeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
 	}
 
