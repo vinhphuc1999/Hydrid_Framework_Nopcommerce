@@ -3,6 +3,7 @@ package pageObject.gorillaDesk.user;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import commons.PageGeneratorManager;
 import pageUIs.gorillaDesk.UserLogInPageUI;
 
 public class UserLogInPageObject extends BasePage {
@@ -13,9 +14,10 @@ public class UserLogInPageObject extends BasePage {
 		this.driver = driver;
 	}
 
-	public void clickToLogInButton() {
+	public UserCalendarPageObject clickToLogInButton() {
 		waitForElementClickable(driver, UserLogInPageUI.LOG_IN_BUTTON);
 		clickToElement(driver, UserLogInPageUI.LOG_IN_BUTTON);
+		return PageGeneratorManager.getUserCalenderPage(driver);
 	}
 
 	public String getErrorUser() {

@@ -86,7 +86,7 @@ public class Login extends BaseTest {
 	public void TC_6_Login_Success() {
 		userLogInPage.inputEmailTextbox(userEmailAddress);
 		userLogInPage.inputPasswordTextbox(Password);
-		userLogInPage.clickToLogInButton();
+		userCalendarPage = userLogInPage.clickToLogInButton();
 		Assert.assertEquals(userCalendarPage.getTitleCalendarPage(), "Calendar");
 	}
 
